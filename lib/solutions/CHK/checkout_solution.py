@@ -27,7 +27,10 @@ class Offers:
         return self.items[item]
 
     def get_offer(self, item):
-        return self.items[item]
+        try:
+            return self.items[item]
+        except KeyError:
+            return None
 
 # noinspection PyUnusedLocal
 # skus = unicode string
@@ -44,11 +47,16 @@ def checkout(skus):
     total = 0
     for k in counted:
         offer = offers.get_offer(k)
-        total += offer.get_total(int(counted[k]))
+        if offer:
+            total += offer.get_total(int(counted[k]))
 
     print(total)
+    return total
 
 
 checkout("AAABBCD")
+checkout("AAABBCDR")
+checkout("")
+
 
 
