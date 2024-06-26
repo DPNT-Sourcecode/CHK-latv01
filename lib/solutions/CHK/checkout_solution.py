@@ -12,6 +12,9 @@ class Offer:
         else:
             special = self.special.split(" for ")
             stripped_amount = re.search(r'[0-9]+',special[0]).group()
+            if int(stripped_amount) > amount:
+                return self.price * amount
+
             covered = amount % int(stripped_amount)
             not_covered = amount - covered
             return self.price * not_covered + int(special[1]) * covered
@@ -54,6 +57,8 @@ def checkout(skus):
             total += offer.get_total(int(counted[k]))
 
     return total
+
+print(checkout("A"))
 
 
 
