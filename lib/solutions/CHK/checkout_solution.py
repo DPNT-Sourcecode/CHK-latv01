@@ -43,6 +43,9 @@ offers.add_item(Offer("D", 15, ""))
 
 
 def checkout(skus):
+    if type(skus) is not str:
+        return -1
+
     counted = Counter(skus)
     total = 0
     for k in counted:
@@ -50,13 +53,9 @@ def checkout(skus):
         if offer:
             total += offer.get_total(int(counted[k]))
 
-    print(total)
     return total
 
 
-checkout("AAABBCD")
-checkout("AAABBCDR")
-checkout("")
 
 
 
