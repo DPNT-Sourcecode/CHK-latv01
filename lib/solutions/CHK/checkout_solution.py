@@ -1,4 +1,4 @@
-from Collections import Counter
+from collections import Counter
 
 class Offer:
     def __init__(self, item, price, special):
@@ -17,7 +17,7 @@ class Offers:
     def specials(self, item):
         return self.items[item]
 
-    def check_special(self):
+    def get_price(self):
         return 0
 
 # noinspection PyUnusedLocal
@@ -31,10 +31,15 @@ offers.add_item(Offer("D", 20, ""))
 
 
 def checkout(skus):
+    counted = Counter(skus)
+    for k in counted:
+        print(k, counted[k])
+
     print(skus, offers, Counter(skus))
 
 
 checkout("AAAAABBBCCAAA")
+
 
 
 
