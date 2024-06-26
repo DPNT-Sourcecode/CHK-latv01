@@ -11,9 +11,10 @@ class Offer:
             return self.price * amount
         else:
             special = self.special.split(" for ")
-            strippedAmount = re.search(r'[0-9]+',special[0]).group()
-            print(special[0], special[1],strippedAmount.group())
-            return self.price * amount
+            stripped_amount = re.search(r'[0-9]+',special[0]).group()
+            covered = amount % int(stripped_amount)
+            not_covered = amount - covered
+            return self.price * not_covered + int(special[1]) * covered
 
 class Offers:
     def __init__(self):
@@ -40,12 +41,14 @@ offers.add_item(Offer("D", 15, ""))
 
 def checkout(skus):
     counted = Counter(skus)
+    total = 0
     for k in counted:
         offer = offers.get_offer(k)
-        print(k, counted[k], offer.get_total(int(counted[k])))
+        total += offer.get_total(int(counted[k]))
 
-    print(skus, offers, Counter(skus))
+    print(total)
 
 
-checkout("AAAAABBBCCAAADD")
+checkout("AAABBCD")
+
 
