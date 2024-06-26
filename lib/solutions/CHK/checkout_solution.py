@@ -47,7 +47,10 @@ offers.add_item(Offer("D", 15, ""))
 
 
 def checkout(skus):
-    if type(skus) is not str or re.fullmatch(r'[A-Z]+', skus) is None:
+    if type(skus) is not str:
+        return -1
+
+    if skus != "" and re.fullmatch(r'[A-Z]+', skus) is None:
         return -1
 
     counted = Counter(skus)
