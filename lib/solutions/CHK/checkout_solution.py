@@ -47,7 +47,9 @@ offers.add_item(Offer("D", 15, ""))
 
 
 def checkout(skus):
-    if type(skus) is not str:
+    r = re.fullmatch(r'[A-Z]+', skus).group()
+    print(r)
+    if type(skus) is not str and re.fullmatch(r'[A-Z]+', skus).group() is not None:
         return -1
 
     counted = Counter(skus)
@@ -59,11 +61,86 @@ def checkout(skus):
 
     return total
 
-print(checkout("A"))
-print(checkout("AA"))
-print(checkout("AAA"))
-print(checkout("AAAA"))
-print(checkout("AAAAAAAA"))
+print(checkout("a"))
+print(checkout("-"))
+print(checkout("ABCa"))
+
+
+# - {"method":"checkout","params":["a"],"id":"CHK_R1_007"}, expected: -1, got: 0
+# - {"method":"checkout","params":["-"],"id":"CHK_R1_008"}, expected: -1, got: 0
+# - {"method":"checkout","params":["ABCa"],"id":"CHK_R1_009"}, expected: -1, got: 100
+#
+# /Users/alekschervinsky/Downloads/accelerate_runner/venv/bin/python /Users/alekschervinsky/Downloads/accelerate_runner/lib/send_command_to_server.py
+# 50
+# 100
+# 130
+# 180
+# 360
+# Connecting to run.accelerate.io
+#
+# Your progress (2/3):
+# ✓ SUM (1 round)  -   warmup - completed in 8 min (+0 min penalty)
+# ✓    └── SUM_R1  - completed in 8 min (+0 min penalty)
+# ✓ HLO (2 rounds) -   warmup - completed in 7 min (+10 min penalty)
+# ✓    ├── HLO_R1  - completed in 4 min (+10 min penalty)
+# ✓    └── HLO_R2  - completed in 2 min (+0 min penalty)
+# @ CHK (5 rounds) - official - Supermarket checkout
+# >    ├── CHK_R1  - running for 42 min (+10 min penalty)
+# ├── CHK_R2  - not started
+# ├── CHK_R3  - not started
+# ├── CHK_R4  - not started
+# └── CHK_R5  - not started
+# ---------------------
+#
+# Type "deploy" if you have answered all the requests.
+# Type "pause" if you need a break.
+#
+# > deploy
+# Selected action is: deploy
+# Starting client
+# Waiting for requests
+#     id = CHK_R1_002, req = checkout(""), resp = 0
+# id = CHK_R1_003, req = checkout("A"), resp = 50
+# id = CHK_R1_004, req = checkout("B"), resp = 30
+# id = CHK_R1_005, req = checkout("C"), resp = 20
+# id = CHK_R1_006, req = checkout("D"), resp = 15
+# id = CHK_R1_007, req = checkout("a"), resp = 0
+# id = CHK_R1_008, req = checkout("-"), resp = 0
+# id = CHK_R1_009, req = checkout("ABCa"), resp = 100
+# id = CHK_R1_010, req = checkout("AxA"), resp = 100
+# id = CHK_R1_011, req = checkout("ABCD"), resp = 115
+# id = CHK_R1_012, req = checkout("A"), resp = 50
+# id = CHK_R1_013, req = checkout("AA"), resp = 100
+# id = CHK_R1_014, req = checkout("AAA"), resp = 130
+# id = CHK_R1_015, req = checkout("AAAA"), resp = 180
+# id = CHK_R1_016, req = checkout("AAAAA"), resp = 230
+# id = CHK_R1_017, req = checkout("AAAAAA"), resp = 260
+# id = CHK_R1_018, req = checkout("B"), resp = 30
+# id = CHK_R1_019, req = checkout("BB"), resp = 45
+# id = CHK_R1_020, req = checkout("BBB"), resp = 75
+# id = CHK_R1_021, req = checkout("BBBB"), resp = 90
+# id = CHK_R1_022, req = checkout("ABCDABCD"), resp = 215
+# id = CHK_R1_023, req = checkout("BABDDCAC"), resp = 215
+# id = CHK_R1_024, req = checkout("AAABB"), resp = 175
+# id = CHK_R1_001, req = checkout("ABCDCBAABCABBAAA"), resp = 505
+# Stopping client
+# Notify round "CHK_R1", event "deploy"
+# --------------------------------------------
+#
+# Result is: FAILED
+# Some requests have failed (4/24). Here are some of them:
+# - {"method":"checkout","params":["a"],"id":"CHK_R1_007"}, expected: -1, got: 0
+# - {"method":"checkout","params":["-"],"id":"CHK_R1_008"}, expected: -1, got: 0
+# - {"method":"checkout","params":["ABCa"],"id":"CHK_R1_009"}, expected: -1, got: 100
+# You have received a penalty of: 10 min
+# The round will restart now
+#
+# Look at your failed trials and edit your code. When you've finished, deploy your code with "deploy"
+#
+# Challenge description saved to file: challenges/CHK_R1.txt.
+#
+# Process finished with exit code 0
+
 
 
 
