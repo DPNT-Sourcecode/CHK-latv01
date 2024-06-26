@@ -1,5 +1,5 @@
 from collections import Counter
-
+import re
 class Offer:
     def __init__(self, item, price, special):
         self.item = item
@@ -11,7 +11,8 @@ class Offer:
             return self.price * amount
         else:
             special = self.special.split(" for ")
-            print(int(special[0]), special[1])
+            strippedAmount = re.search(r'[0-9]+',special[0]).group()
+            print(special[0], special[1],strippedAmount.group())
             return self.price * amount
 
 class Offers:
@@ -47,3 +48,4 @@ def checkout(skus):
 
 
 checkout("AAAAABBBCCAAADD")
+
