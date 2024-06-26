@@ -61,5 +61,3 @@ def checkout(skus):
             total += offer.get_total(int(counted[k]))
 
     return total
-
-
