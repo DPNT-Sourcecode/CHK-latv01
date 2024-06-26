@@ -7,7 +7,12 @@ class Offer:
         self.special = special
 
     def get_total(self, amount):
-        return self.price * amount
+        if self.special == "":
+            return self.price * amount
+        else:
+            special = self.special.split(" for ")
+            print(int(special[0]), special[1])
+            return self.price * amount
 
 class Offers:
     def __init__(self):
@@ -42,9 +47,3 @@ def checkout(skus):
 
 
 checkout("AAAAABBBCCAAADD")
-
-
-
-
-
-
