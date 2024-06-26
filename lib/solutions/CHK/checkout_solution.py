@@ -47,9 +47,7 @@ offers.add_item(Offer("D", 15, ""))
 
 
 def checkout(skus):
-    r = re.fullmatch(r'[A-Z]+', skus).group()
-    print(r)
-    if type(skus) is not str and re.fullmatch(r'[A-Z]+', skus).group() is not None:
+    if type(skus) is not str or re.fullmatch(r'[A-Z]+', skus) is None:
         return -1
 
     counted = Counter(skus)
@@ -140,10 +138,3 @@ print(checkout("ABCa"))
 # Challenge description saved to file: challenges/CHK_R1.txt.
 #
 # Process finished with exit code 0
-
-
-
-
-
-
-
