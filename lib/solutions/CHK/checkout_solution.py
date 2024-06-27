@@ -83,11 +83,11 @@ class Offers:
 specials = Specials()
 
 specials.add_special("A", [(5, 200), (3, 130)])
-# specials.add_special("A", [(3, 130)])
 specials.add_special("B", [(2, 45)])
 
 free_specials = FreeSpecial()
 free_specials.add_special("E", [(2, "B")])
+free_specials.add_special("F", [(3, "F")])
 
 offers = Offers()
 offers.add_item(Offer("A", 50))
@@ -95,6 +95,7 @@ offers.add_item(Offer("B", 30))
 offers.add_item(Offer("C", 20))
 offers.add_item(Offer("D", 15))
 offers.add_item(Offer("E", 40))
+offers.add_item(Offer("F", 10))
 
 
 def checkout(skus):
@@ -148,8 +149,7 @@ def checkout(skus):
 # print(checkout("AAAAAAAABCDEE"))
 # print(checkout("EEEEBB"), 160)
 # print(checkout("BEBEEE"), 160)
-
-
-
-
-
+# print(checkout("BEBEEEFF"), 180)
+# print(checkout("BEBEEEFFF"), 180)
+# print(checkout("BEBEEEFFFF"), 190)
+# print(checkout("BEBEEEFFFFF"), 200)
