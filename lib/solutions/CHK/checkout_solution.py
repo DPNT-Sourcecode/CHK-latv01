@@ -161,7 +161,7 @@ def checkout(skus):
 
         for item in k:
             if item in counted and counted[item] > 0:
-                match.append(item)
+                match += [item] * counted[item]
 
         for i in gs[k]:
             covered = len(match) // i[0]
@@ -217,10 +217,11 @@ def checkout(skus):
 # print(checkout("KKK"), 190)
 # print(checkout("KKKK"), 240)
 
-# print(checkout("STXSTX"), 90)
-# print(checkout("SSS"),45)
-# print(checkout("SSSZ"), 65)
+print(checkout("STXSTX"), 90)
+print(checkout("SSS"),45)
+print(checkout("SSSZ"), 65)
 print(checkout("ZZZ"), 45)
+print(checkout("ZZZS"), 45)
 
 
 
