@@ -39,7 +39,7 @@ class Offer:
         self.price = price
 
     def get_total(self, amount, specials):
-        special = specials.get_special(self.item)
+        special = specials.get_special(self.item, amount)
         if self.special == "":
             return self.price * amount
         else:
@@ -110,12 +110,12 @@ def checkout(skus):
     for k in counted:
         offer = offers.get_offer(k)
         if offer:
-            total += offer.get_total(int(counted[k]))
+            total += offer.get_total(int(counted[k]), specials)
 
     return total
 
 
-print(checkout("AAAAAAAABCDEE"))
+# print(checkout("AAAAAAAABCDEE"))
 
 
 
