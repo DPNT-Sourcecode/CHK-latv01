@@ -52,6 +52,9 @@ class GroupSpecial(Specials):
         else:
             return []
 
+    def get_specials(self):
+        return self.items
+
 class Offer:
     def __init__(self, item, price):
         self.item = item
@@ -151,9 +154,11 @@ def checkout(skus):
         if fi in counted and counted[fi] > 0:
             counted[fi] -= fc
 
-    for k in group_special:
-        fs = free_specials.get_special(k, counted[k])
-        free_items += fs
+    gs = group_special.get_specials()
+    for k in gs:
+        for v in gs[k]:
+            print(v)
+            print(v)
 
     for k in counted:
         offer = offers.get_offer(k)
