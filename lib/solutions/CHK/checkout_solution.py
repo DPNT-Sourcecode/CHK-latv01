@@ -112,12 +112,11 @@ offers.add_item(Offer("C", 20))
 offers.add_item(Offer("D", 15))
 offers.add_item(Offer("E", 40))
 offers.add_item(Offer("F", 10))
-
 offers.add_item(Offer("G",20))
 offers.add_item(Offer("H",10))
 offers.add_item(Offer("I",35))
 offers.add_item(Offer("J",60))
-offers.add_item(Offer("K",80))
+offers.add_item(Offer("K",70))
 offers.add_item(Offer("L",90))
 offers.add_item(Offer("M",15))
 offers.add_item(Offer("N",40))
@@ -352,6 +351,7 @@ print(checkout("STXYZ"), 120)
 # id = CHK_R4_140, req = checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH"), resp = 1880
 # id = CHK_R4_141, req = checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH"), resp = 1640
 # id = CHK_R4_001, req = checkout("PPPPQRUVPQRUVPQRUVSU"), resp = 740
+
 
 
 
