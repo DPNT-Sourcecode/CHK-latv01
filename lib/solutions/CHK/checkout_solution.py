@@ -22,12 +22,24 @@ class FreeSpecial(Specials):
     def __init__(self):
         super().__init__()
 
+    def get_special(self, key, value):
+        if key in self.items:
+            ret = []
+            for v in self.items[key]:
+                covered = v[0] // int(value)
+                if covered > 0:
+                    ret.append(v[1])
+            return ret
+        else:
+            return []
+
 class Offer:
     def __init__(self, item, price):
         self.item = item
         self.price = price
 
-    def get_total(self, amount):
+    def get_total(self, amount, specials):
+        special = specials.get_special(self.item)
         if self.special == "":
             return self.price * amount
         else:
@@ -104,6 +116,7 @@ def checkout(skus):
 
 
 print(checkout("AAAAAAAABCDEE"))
+
 
 
 
