@@ -20,7 +20,7 @@ class Specials:
                     specials_price += covered * v[1]
             return temp_value, specials_price
         else:
-            return 0, value
+            return value, 0
 
 class FreeSpecial(Specials):
     def __init__(self):
@@ -82,7 +82,8 @@ class Offers:
 
 specials = Specials()
 
-specials.add_special("A", [ (3, 130)])
+# specials.add_special("A", [(5, 200) (3, 130)])
+specials.add_special("A", [(3, 130)])
 specials.add_special("B", [(2, 45)])
 
 free_specials = FreeSpecial()
@@ -93,7 +94,7 @@ offers.add_item(Offer("A", 50))
 offers.add_item(Offer("B", 30))
 offers.add_item(Offer("C", 20))
 offers.add_item(Offer("D", 15))
-# offers.add_item(Offer("E", 40))
+offers.add_item(Offer("E", 40))
 
 
 def checkout(skus):
@@ -122,19 +123,13 @@ def checkout(skus):
 
     return total
 
-print(checkout(""))
-print(checkout("-"))
-print(checkout("AAAAAAAABCDEE"))
-print(checkout("a"))
-print(checkout("-"))
-print(checkout("ABCa"))
-
-print(checkout("A"), 50)
-print(checkout("B"),  30)
+# print(checkout("A"), 50)
+# print(checkout("B"),  30)
 print(checkout("C"),  20)
 print(checkout("D"),  15)
-print(checkout("ABCa"),  100)
-print(checkout("AxA"),  100)
+print(checkout("ABCa"),  -1)
+print(checkout("-"),  -1)
+print(checkout("AxA"),  -1)
 print(checkout("ABCD"), 115)
 print(checkout("A"), 50)
 print(checkout("AA"), 100)
@@ -150,6 +145,7 @@ print(checkout("ABCDABCD"), 215)
 print(checkout("BABDDCAC"), 215)
 print(checkout("AAABB"), 175)
 print(checkout("ABCDCBAABCABBAAA"),  505)
+print(checkout("AAAAAAAABCDEE"))
 
 
 # - {"method":"checkout","params":["a"],"id":"CHK_R1_007"}, expected: -1, got: 0
@@ -226,4 +222,5 @@ print(checkout("ABCDCBAABCABBAAA"),  505)
 # Challenge description saved to file: challenges/CHK_R1.txt.
 #
 # Process finished with exit code 0
+
 
