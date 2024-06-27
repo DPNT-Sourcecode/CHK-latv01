@@ -155,10 +155,20 @@ def checkout(skus):
             counted[fi] -= fc
 
     gs = group_special.get_specials()
+
+
     for k in gs:
-        for v in gs[k]:
-            print(v)
-            print(v)
+        match = []
+
+        for item in k:
+            if item in counted and counted[item] > 0:
+                match.append(item)
+        if len(match) == 3:
+            total += gs[k]
+            print(match)
+    # for v in gs[k]:
+    #     print(v)
+    #     print(v)
 
     for k in counted:
         offer = offers.get_offer(k)
@@ -341,3 +351,4 @@ print(checkout("STXYZ"), 120)
 # id = CHK_R4_140, req = checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH"), resp = 1880
 # id = CHK_R4_141, req = checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH"), resp = 1640
 # id = CHK_R4_001, req = checkout("PPPPQRUVPQRUVPQRUVSU"), resp = 740
+
