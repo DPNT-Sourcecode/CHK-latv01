@@ -213,9 +213,9 @@ def checkout(skus):
 # print(checkout("ABCDEFGHIJKLMNOPQRSTUVW"), 795)
 # print(checkout("K"), 70)
 
-print(checkout("KK"), 120)
-print(checkout("KKK"), 190)
-print(checkout("KKKK"), 240)
+# print(checkout("KK"), 120)
+# print(checkout("KKK"), 190)
+# print(checkout("KKKK"), 240)
 
 
 
@@ -522,6 +522,7 @@ print(checkout("KKKK"), 240)
 # - {"method":"checkout","params":["K"],"id":"CHK_R5_013"}, expected: 70, got: 80
 # - {"method":"checkout","params":["ABCDEFGHIJKLMNOPQRSTUVW"],"id":"CHK_R5_033"}, expected: 795, got: 805
 # - {"method":"checkout","params":["K"],"id":"CHK_R5_095"}, expected: 70, got: 80
+
 
 
 
