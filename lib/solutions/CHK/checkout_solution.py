@@ -146,6 +146,9 @@ def checkout(skus):
 # print(checkout("AAABB"), 175)
 # print(checkout("ABCDCBAABCABBAAA"),  505)
 # print(checkout("AAAAAAAABCDEE"))
+print(checkout("EEEEBB"), 160)
+print(checkout("BEBEEE"), 160)
+
 
 
 
