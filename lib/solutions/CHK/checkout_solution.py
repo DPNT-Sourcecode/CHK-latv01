@@ -95,7 +95,7 @@ free_specials.add_special("E", [(2, "B")])
 free_specials.add_special("F", [(3, "F")])
 free_specials.add_special("N", [(3, "M")])
 free_specials.add_special("R", [(3, "Q")])
-free_specials.add_special("U", [(3, "U")])
+free_specials.add_special("U", [(4, "U")])
 
 offers = Offers()
 offers.add_item(Offer("A", 50))
@@ -182,5 +182,7 @@ def checkout(skus):
 # print(checkout("BEBEEEFFF"), 180)
 # print(checkout("BEBEEEFFFF"), 190)
 # print(checkout("BEBEEEFFFFF"), 200)
+# print(checkout("UUU"), 120)
+
 
 
