@@ -87,11 +87,15 @@ specials.add_special("B", [(2, 45)])
 specials.add_special("H", [(10, 80), (5, 45)])
 specials.add_special("K", [(2, 150)])
 specials.add_special("P", [(5, 200)])
+specials.add_special("Q", [(3, 80)])
+specials.add_special("V", [(3, 130), (2, 90)])
 
 free_specials = FreeSpecial()
 free_specials.add_special("E", [(2, "B")])
 free_specials.add_special("F", [(3, "F")])
 free_specials.add_special("N", [(3, "M")])
+free_specials.add_special("R", [(3, "Q")])
+free_specials.add_special("U", [(3, "U")])
 
 offers = Offers()
 offers.add_item(Offer("A", 50))
@@ -112,11 +116,11 @@ offers.add_item(Offer("N",40))
 offers.add_item(Offer("O",10))
 offers.add_item(Offer("P",50))
 offers.add_item(Offer("Q",30))
-offers.add_item(Offer("R",50",3R get one Q free      |
+offers.add_item(Offer("R",50))
 offers.add_item(Offer("S",30))
 offers.add_item(Offer("T",20))
-offers.add_item(Offer("U",40",3U get one U free      |
-offers.add_item(Offer("V",50",2V for 90, 3V for 130  |
+offers.add_item(Offer("U",40))
+offers.add_item(Offer("V",50))
 offers.add_item(Offer("W",20))
 offers.add_item(Offer("X",90))
 offers.add_item(Offer("Y",10))
@@ -178,4 +182,5 @@ def checkout(skus):
 # print(checkout("BEBEEEFFF"), 180)
 # print(checkout("BEBEEEFFFF"), 190)
 # print(checkout("BEBEEEFFFFF"), 200)
+
 
