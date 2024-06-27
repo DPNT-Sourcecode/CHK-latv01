@@ -82,8 +82,8 @@ class Offers:
 
 specials = Specials()
 
-# specials.add_special("A", [(5, 200) (3, 130)])
-specials.add_special("A", [(3, 130)])
+specials.add_special("A", [(5, 200), (3, 130)])
+# specials.add_special("A", [(3, 130)])
 specials.add_special("B", [(2, 45)])
 
 free_specials = FreeSpecial()
@@ -125,102 +125,27 @@ def checkout(skus):
 
 # print(checkout("A"), 50)
 # print(checkout("B"),  30)
-print(checkout("C"),  20)
-print(checkout("D"),  15)
-print(checkout("ABCa"),  -1)
-print(checkout("-"),  -1)
-print(checkout("AxA"),  -1)
-print(checkout("ABCD"), 115)
-print(checkout("A"), 50)
-print(checkout("AA"), 100)
-print(checkout("AAA"), 130)
-print(checkout("AAAA"), 180)
-print(checkout("AAAAA"), 230)
-print(checkout("AAAAAA"), 260)
-print(checkout("B"), 30)
-print(checkout("BB"), 45)
-print(checkout("BBB"), 75)
-print(checkout("BBBB"), 90)
-print(checkout("ABCDABCD"), 215)
-print(checkout("BABDDCAC"), 215)
-print(checkout("AAABB"), 175)
-print(checkout("ABCDCBAABCABBAAA"),  505)
-print(checkout("AAAAAAAABCDEE"))
-
-
-# - {"method":"checkout","params":["a"],"id":"CHK_R1_007"}, expected: -1, got: 0
-# - {"method":"checkout","params":["-"],"id":"CHK_R1_008"}, expected: -1, got: 0
-# - {"method":"checkout","params":["ABCa"],"id":"CHK_R1_009"}, expected: -1, got: 100
-#
-# /Users/alekschervinsky/Downloads/accelerate_runner/venv/bin/python /Users/alekschervinsky/Downloads/accelerate_runner/lib/send_command_to_server.py
-# 50
-# 100
-# 130
-# 180
-# 360
-# Connecting to run.accelerate.io
-#
-# Your progress (2/3):
-# ✓ SUM (1 round)  -   warmup - completed in 8 min (+0 min penalty)
-# ✓    └── SUM_R1  - completed in 8 min (+0 min penalty)
-# ✓ HLO (2 rounds) -   warmup - completed in 7 min (+10 min penalty)
-# ✓    ├── HLO_R1  - completed in 4 min (+10 min penalty)
-# ✓    └── HLO_R2  - completed in 2 min (+0 min penalty)
-# @ CHK (5 rounds) - official - Supermarket checkout
-# >    ├── CHK_R1  - running for 42 min (+10 min penalty)
-# ├── CHK_R2  - not started
-# ├── CHK_R3  - not started
-# ├── CHK_R4  - not started
-# └── CHK_R5  - not started
-# ---------------------
-#
-# Type "deploy" if you have answered all the requests.
-# Type "pause" if you need a break.
-#
-# > deploy
-# Selected action is: deploy
-# Starting client
-# Waiting for requests
-#     id = CHK_R1_002, req = checkout(""), 0
+# print(checkout("C"),  20)
+# print(checkout("D"),  15)
+# print(checkout("ABCa"),  -1)
+# print(checkout("-"),  -1)
+# print(checkout("AxA"),  -1)
+# print(checkout("ABCD"), 115)
 # print(checkout("A"), 50)
+# print(checkout("AA"), 100)
+# print(checkout("AAA"), 130)
+# print(checkout("AAAA"), 180)
+# print(checkout("AAAAA"), 230)
+# print(checkout("AAAAAA"), 260)
 # print(checkout("B"), 30)
-# print(checkout("C"), 20)
-# print(checkout("D"), 15)
-# print(checkout("a"), 0)
-# print(checkout("-"), 0)
-# print(checkout("ABCa"), 100
-# print(checkout("AxA"), 100
-# print(checkout("ABCD"), 115
-# print(checkout("A"), 50
-# print(checkout("AA"), 100
-# print(checkout("AAA"), 130
-# print(checkout("AAAA"), 180
-# print(checkout("AAAAA"), 230
-# print(checkout("AAAAAA"), 260
-# print(checkout("B"), 30
-# print(checkout("BB"), 45
-# print(checkout("BBB"), 75
-# print(checkout("BBBB"), 90
-# print(checkout("ABCDABCD"), 215
-# print(checkout("BABDDCAC"), 215
-# print(checkout("AAABB"), 175
-# print(checkout("ABCDCBAABCABBAAA"), 505)
-# Stopping client
-# Notify round "CHK_R1", event "deploy"
-# --------------------------------------------
-#
-# Result is: FAILED
-# Some requests have failed (4/24). Here are some of them:
-# - {"method":"checkout","params":["a"],"id":"CHK_R1_007"}, expected: -1, got: 0
-# - {"method":"checkout","params":["-"],"id":"CHK_R1_008"}, expected: -1, got: 0
-# - {"method":"checkout","params":["ABCa"],"id":"CHK_R1_009"}, expected: -1, got: 100
-# You have received a penalty of: 10 min
-# The round will restart now
-#
-# Look at your failed trials and edit your code. When you've finished, deploy your code with "deploy"
-#
-# Challenge description saved to file: challenges/CHK_R1.txt.
-#
-# Process finished with exit code 0
+# print(checkout("BB"), 45)
+# print(checkout("BBB"), 75)
+# print(checkout("BBBB"), 90)
+# print(checkout("ABCDABCD"), 215)
+# print(checkout("BABDDCAC"), 215)
+# print(checkout("AAABB"), 175)
+# print(checkout("ABCDCBAABCABBAAA"),  505)
+# print(checkout("AAAAAAAABCDEE"))
+
 
 
