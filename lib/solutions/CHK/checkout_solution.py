@@ -158,21 +158,22 @@ def checkout(skus):
 
     gs = group_special.get_specials()
 
-
     for k in gs:
         match = []
 
         for item in k:
             if item in counted and counted[item] > 0:
                 offer = offers.get_offer(item)
-                match += ([item] * counted[item], offer.get_price())
+                match += [(item, offer.get_price())] * counted[item]
+
+        match = sorted(match, key=lambda tup: -tup[1])
 
         for i in gs[k]:
             covered = len(match) // i[0]
             total += covered * i[1]
 
             for r in match[0: covered*i[0]]:
-                counted[r] -= 1
+                counted[r[0]] -= 1
 
     for k in counted:
         offer = offers.get_offer(k)
@@ -223,9 +224,9 @@ def checkout(skus):
 
 # print(checkout("STXSTX"), 90)
 # print(checkout("SSS"),45)
-print(checkout("SSSZ"), 65)
+# print(checkout("SSSZ"), 65)
 # print(checkout("ZZZ"), 45)
-print(checkout("ZZZS"), 65)
+# print(checkout("ZZZS"), 65)
 print(checkout("STXZ"), 65)
 
 
@@ -534,4 +535,5 @@ print(checkout("STXZ"), 65)
 # - {"method":"checkout","params":["K"],"id":"CHK_R5_013"}, expected: 70, got: 80
 # - {"method":"checkout","params":["ABCDEFGHIJKLMNOPQRSTUVW"],"id":"CHK_R5_033"}, expected: 795, got: 805
 # - {"method":"checkout","params":["K"],"id":"CHK_R5_095"}, expected: 70, got: 80
+
 
