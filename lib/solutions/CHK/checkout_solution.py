@@ -1,5 +1,17 @@
 from collections import Counter
 import re
+class Specials:
+    def __init__(self):
+        self.items = dict()
+
+    def add_special(self, key, value):
+        self.items[key] = value
+
+    def get_specials(self):
+        return self.items
+
+class FreeSpecial ex
+
 class Offer:
     def __init__(self, item, price, special):
         self.item = item
@@ -61,3 +73,4 @@ def checkout(skus):
             total += offer.get_total(int(counted[k]))
 
     return total
+
