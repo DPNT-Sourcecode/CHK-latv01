@@ -166,10 +166,10 @@ def checkout(skus):
 
         for i in gs[k]:
             covered = len(match) // i[0]
-            print(covered)
-    # for v in gs[k]:
-    #     print(v)
-    #     print(v)
+            total += covered * i[1]
+
+            for r in match[0: covered*i[0]]:
+                counted[r] -= 1
 
     for k in counted:
         offer = offers.get_offer(k)
@@ -352,5 +352,6 @@ print(checkout("STXYZ"), 120)
 # id = CHK_R4_140, req = checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH"), resp = 1880
 # id = CHK_R4_141, req = checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH"), resp = 1640
 # id = CHK_R4_001, req = checkout("PPPPQRUVPQRUVPQRUVSU"), resp = 740
+
 
 
