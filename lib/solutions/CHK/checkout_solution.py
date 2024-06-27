@@ -8,17 +8,19 @@ class Specials:
         self.items[key] = value
 
     def get_special(self, key, value):
-        return self.items[key]
+        if key in self.items:
+            return self.items[key]
+        else:
+            return None
 
 class FreeSpecial(Specials):
     def __init__(self):
         super().__init__()
 
 class Offer:
-    def __init__(self, item, price, special):
+    def __init__(self, item, price):
         self.item = item
         self.price = price
-        self.special = special
 
     def get_total(self, amount):
         if self.special == "":
@@ -81,6 +83,7 @@ def checkout(skus):
 
     for k in counted:
         fs = free_specials.get_special(k, counted[k])
+        print(fs)
 
     for k in counted:
         offer = offers.get_offer(k)
@@ -88,6 +91,9 @@ def checkout(skus):
             total += offer.get_total(int(counted[k]))
 
     return total
+
+
+checkout("AAAAAAAABCDEE")
 
 
 
