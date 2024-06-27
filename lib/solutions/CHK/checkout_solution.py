@@ -8,12 +8,14 @@ class Specials:
         self.items[key] = value
 
     def get_special(self, key, value):
+        temp_value = value
         if key in self.items:
             ret = []
             for v in self.items[key]:
-                covered = v[0] // int(value)
+                covered = int(temp_value) // v[0]
                 if covered > 0:
                     ret.append(v[1])
+                    temp_value -= covered * v[0]
             return ret
         else:
             return []
@@ -26,7 +28,7 @@ class FreeSpecial(Specials):
         if key in self.items:
             ret = []
             for v in self.items[key]:
-                covered = v[0] // int(value)
+                covered = int(value) // v[0]
                 if covered > 0:
                     ret.append(v[1])
             return ret
@@ -115,4 +117,4 @@ def checkout(skus):
     return total
 
 
-# print(checkout("AAAAAAAABCDEE"))
+print(checkout("AAAAAAAABCDEE"))
