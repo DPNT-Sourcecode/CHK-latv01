@@ -7,11 +7,12 @@ class Specials:
     def add_special(self, key, value):
         self.items[key] = value
 
-    def get_specials(self):
-        return self.items
+    def get_special(self, key, value):
+        return self.items[key]
 
 class FreeSpecial(Specials):
-    def
+    def __init__(self):
+        super().__init__()
 
 class Offer:
     def __init__(self, item, price, special):
@@ -52,11 +53,20 @@ class Offers:
 # noinspection PyUnusedLocal
 # skus = unicode string
 
+specials = Specials()
+
+specials.add_special("A", [(5, 200), (3, 130)])
+specials.add_special("B", [(2, 45)])
+
+free_specials = FreeSpecial()
+free_specials.add_special("E", [(2, "B")])
+
 offers = Offers()
-offers.add_item(Offer("A", 50, "3A for 130"))
-offers.add_item(Offer("B", 30, "2B for 45"))
-offers.add_item(Offer("C", 20, ""))
-offers.add_item(Offer("D", 15, ""))
+offers.add_item(Offer("A", 50))
+offers.add_item(Offer("B", 30))
+offers.add_item(Offer("C", 20))
+offers.add_item(Offer("D", 15))
+offers.add_item(Offer("E", 40))
 
 
 def checkout(skus):
@@ -68,11 +78,16 @@ def checkout(skus):
 
     counted = Counter(skus)
     total = 0
+
+    for k in counted:
+        fs = free_specials.get_special(k, counted[k])
+
     for k in counted:
         offer = offers.get_offer(k)
         if offer:
             total += offer.get_total(int(counted[k]))
 
     return total
+
 
 
