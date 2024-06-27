@@ -66,6 +66,9 @@ class Offer:
 
         return total
 
+    def get_price(self):
+        return self.price
+
 class Offers:
     def __init__(self):
         self.items = dict()
@@ -161,7 +164,8 @@ def checkout(skus):
 
         for item in k:
             if item in counted and counted[item] > 0:
-                match += [item] * counted[item]
+                offer = offers.get_offer(item)
+                match += ([item] * counted[item], offer.get_price())
 
         for i in gs[k]:
             covered = len(match) // i[0]
@@ -217,11 +221,13 @@ def checkout(skus):
 # print(checkout("KKK"), 190)
 # print(checkout("KKKK"), 240)
 
-print(checkout("STXSTX"), 90)
-print(checkout("SSS"),45)
+# print(checkout("STXSTX"), 90)
+# print(checkout("SSS"),45)
 print(checkout("SSSZ"), 65)
-print(checkout("ZZZ"), 45)
-print(checkout("ZZZS"), 45)
+# print(checkout("ZZZ"), 45)
+print(checkout("ZZZS"), 65)
+print(checkout("STXZ"), 65)
+
 
 
 
@@ -528,3 +534,4 @@ print(checkout("ZZZS"), 45)
 # - {"method":"checkout","params":["K"],"id":"CHK_R5_013"}, expected: 70, got: 80
 # - {"method":"checkout","params":["ABCDEFGHIJKLMNOPQRSTUVW"],"id":"CHK_R5_033"}, expected: 795, got: 805
 # - {"method":"checkout","params":["K"],"id":"CHK_R5_095"}, expected: 70, got: 80
+
