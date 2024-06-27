@@ -10,7 +10,8 @@ class Specials:
     def get_specials(self):
         return self.items
 
-class FreeSpecial ex
+class FreeSpecial(Specials):
+    def
 
 class Offer:
     def __init__(self, item, price, special):
@@ -73,4 +74,5 @@ def checkout(skus):
             total += offer.get_total(int(counted[k]))
 
     return total
+
 
