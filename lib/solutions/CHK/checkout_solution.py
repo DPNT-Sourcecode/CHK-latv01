@@ -163,9 +163,10 @@ def checkout(skus):
         for item in k:
             if item in counted and counted[item] > 0:
                 match.append(item)
-        if len(match) == 3:
-            total += gs[k]
-            print(match)
+
+        for i in gs[k]:
+            covered = len(match) // i[0]
+            print(covered)
     # for v in gs[k]:
     #     print(v)
     #     print(v)
@@ -351,4 +352,5 @@ print(checkout("STXYZ"), 120)
 # id = CHK_R4_140, req = checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH"), resp = 1880
 # id = CHK_R4_141, req = checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH"), resp = 1640
 # id = CHK_R4_001, req = checkout("PPPPQRUVPQRUVPQRUVSU"), resp = 740
+
 
