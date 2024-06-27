@@ -48,7 +48,7 @@ class Offer:
 
         return total
 
-        # if self.special == "":
+        # if self.special,"":
         #     return self.price * amount
         # else:
         #     special = self.special.split(" for ")
@@ -82,7 +82,7 @@ class Offers:
 
 specials = Specials()
 
-specials.add_special("A", [(5, 200), (3, 130)])
+specials.add_special("A", [ (3, 130)])
 specials.add_special("B", [(2, 45)])
 
 free_specials = FreeSpecial()
@@ -93,7 +93,7 @@ offers.add_item(Offer("A", 50))
 offers.add_item(Offer("B", 30))
 offers.add_item(Offer("C", 20))
 offers.add_item(Offer("D", 15))
-offers.add_item(Offer("E", 40))
+# offers.add_item(Offer("E", 40))
 
 
 def checkout(skus):
@@ -130,28 +130,26 @@ print(checkout("-"))
 print(checkout("ABCa"))
 
 print(checkout("A"), 50)
-# id = CHK_R1_004, req = checkout("B"), resp = 30
-# id = CHK_R1_005, req = checkout("C"), resp = 20
-# id = CHK_R1_006, req = checkout("D"), resp = 15
-# id = CHK_R1_007, req = checkout("a"), resp = 0
-# id = CHK_R1_008, req = checkout("-"), resp = 0
-# id = CHK_R1_009, req = checkout("ABCa"), resp = 100
-# id = CHK_R1_010, req = checkout("AxA"), resp = 100
-# id = CHK_R1_011, req = checkout("ABCD"), resp = 115
-# id = CHK_R1_012, req = checkout("A"), resp = 50
-# id = CHK_R1_013, req = checkout("AA"), resp = 100
-# id = CHK_R1_014, req = checkout("AAA"), resp = 130
-# id = CHK_R1_015, req = checkout("AAAA"), resp = 180
-# id = CHK_R1_016, req = checkout("AAAAA"), resp = 230
-# id = CHK_R1_017, req = checkout("AAAAAA"), resp = 260
-# id = CHK_R1_018, req = checkout("B"), resp = 30
-# id = CHK_R1_019, req = checkout("BB"), resp = 45
-# id = CHK_R1_020, req = checkout("BBB"), resp = 75
-# id = CHK_R1_021, req = checkout("BBBB"), resp = 90
-# id = CHK_R1_022, req = checkout("ABCDABCD"), resp = 215
-# id = CHK_R1_023, req = checkout("BABDDCAC"), resp = 215
-# id = CHK_R1_024, req = checkout("AAABB"), resp = 175
-# id = CHK_R1_001, req = checkout("ABCDCBAABCABBAAA"), resp = 505
+print(checkout("B"),  30)
+print(checkout("C"),  20)
+print(checkout("D"),  15)
+print(checkout("ABCa"),  100)
+print(checkout("AxA"),  100)
+print(checkout("ABCD"), 115)
+print(checkout("A"), 50)
+print(checkout("AA"), 100)
+print(checkout("AAA"), 130)
+print(checkout("AAAA"), 180)
+print(checkout("AAAAA"), 230)
+print(checkout("AAAAAA"), 260)
+print(checkout("B"), 30)
+print(checkout("BB"), 45)
+print(checkout("BBB"), 75)
+print(checkout("BBBB"), 90)
+print(checkout("ABCDABCD"), 215)
+print(checkout("BABDDCAC"), 215)
+print(checkout("AAABB"), 175)
+print(checkout("ABCDCBAABCABBAAA"),  505)
 
 
 # - {"method":"checkout","params":["a"],"id":"CHK_R1_007"}, expected: -1, got: 0
@@ -187,30 +185,30 @@ print(checkout("A"), 50)
 # Selected action is: deploy
 # Starting client
 # Waiting for requests
-#     id = CHK_R1_002, req = checkout(""), resp = 0
-# id = CHK_R1_003, req = checkout("A"), resp = 50
-# id = CHK_R1_004, req = checkout("B"), resp = 30
-# id = CHK_R1_005, req = checkout("C"), resp = 20
-# id = CHK_R1_006, req = checkout("D"), resp = 15
-# id = CHK_R1_007, req = checkout("a"), resp = 0
-# id = CHK_R1_008, req = checkout("-"), resp = 0
-# id = CHK_R1_009, req = checkout("ABCa"), resp = 100
-# id = CHK_R1_010, req = checkout("AxA"), resp = 100
-# id = CHK_R1_011, req = checkout("ABCD"), resp = 115
-# id = CHK_R1_012, req = checkout("A"), resp = 50
-# id = CHK_R1_013, req = checkout("AA"), resp = 100
-# id = CHK_R1_014, req = checkout("AAA"), resp = 130
-# id = CHK_R1_015, req = checkout("AAAA"), resp = 180
-# id = CHK_R1_016, req = checkout("AAAAA"), resp = 230
-# id = CHK_R1_017, req = checkout("AAAAAA"), resp = 260
-# id = CHK_R1_018, req = checkout("B"), resp = 30
-# id = CHK_R1_019, req = checkout("BB"), resp = 45
-# id = CHK_R1_020, req = checkout("BBB"), resp = 75
-# id = CHK_R1_021, req = checkout("BBBB"), resp = 90
-# id = CHK_R1_022, req = checkout("ABCDABCD"), resp = 215
-# id = CHK_R1_023, req = checkout("BABDDCAC"), resp = 215
-# id = CHK_R1_024, req = checkout("AAABB"), resp = 175
-# id = CHK_R1_001, req = checkout("ABCDCBAABCABBAAA"), resp = 505
+#     id = CHK_R1_002, req = checkout(""), 0
+# print(checkout("A"), 50)
+# print(checkout("B"), 30)
+# print(checkout("C"), 20)
+# print(checkout("D"), 15)
+# print(checkout("a"), 0)
+# print(checkout("-"), 0)
+# print(checkout("ABCa"), 100
+# print(checkout("AxA"), 100
+# print(checkout("ABCD"), 115
+# print(checkout("A"), 50
+# print(checkout("AA"), 100
+# print(checkout("AAA"), 130
+# print(checkout("AAAA"), 180
+# print(checkout("AAAAA"), 230
+# print(checkout("AAAAAA"), 260
+# print(checkout("B"), 30
+# print(checkout("BB"), 45
+# print(checkout("BBB"), 75
+# print(checkout("BBBB"), 90
+# print(checkout("ABCDABCD"), 215
+# print(checkout("BABDDCAC"), 215
+# print(checkout("AAABB"), 175
+# print(checkout("ABCDCBAABCABBAAA"), 505)
 # Stopping client
 # Notify round "CHK_R1", event "deploy"
 # --------------------------------------------
@@ -228,3 +226,4 @@ print(checkout("A"), 50)
 # Challenge description saved to file: challenges/CHK_R1.txt.
 #
 # Process finished with exit code 0
+
