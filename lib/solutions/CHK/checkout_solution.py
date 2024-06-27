@@ -9,7 +9,11 @@ class Specials:
 
     def get_special(self, key, value):
         if key in self.items:
-            return self.items[key]
+            ret = []
+            for v in self.items[key]:
+                covered = v[0] // int(value)
+                print(covered)
+            return ret
         else:
             return None
 
@@ -94,6 +98,7 @@ def checkout(skus):
 
 
 checkout("AAAAAAAABCDEE")
+
 
 
 
