@@ -12,10 +12,11 @@ class Specials:
             ret = []
             for v in self.items[key]:
                 covered = v[0] // int(value)
-                print(covered)
+                if covered > 0:
+                    ret.append(v[1])
             return ret
         else:
-            return None
+            return []
 
 class FreeSpecial(Specials):
     def __init__(self):
@@ -85,9 +86,14 @@ def checkout(skus):
     counted = Counter(skus)
     total = 0
 
+    free_items = []
     for k in counted:
         fs = free_specials.get_special(k, counted[k])
-        print(fs)
+        free_items += fs
+
+    for fi in free_items:
+        if fi in counted and counted[fi] > 0:
+            counted[fi] -= 1
 
     for k in counted:
         offer = offers.get_offer(k)
@@ -97,7 +103,7 @@ def checkout(skus):
     return total
 
 
-checkout("AAAAAAAABCDEE")
+print(checkout("AAAAAAAABCDEE"))
 
 
 
