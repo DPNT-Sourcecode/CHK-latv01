@@ -125,14 +125,14 @@ offers.add_item(Offer("O",10))
 offers.add_item(Offer("P",50))
 offers.add_item(Offer("Q",30))
 offers.add_item(Offer("R",50))
-offers.add_item(Offer("S",30))
+offers.add_item(Offer("S",20))
 offers.add_item(Offer("T",20))
 offers.add_item(Offer("U",40))
 offers.add_item(Offer("V",50))
 offers.add_item(Offer("W",20))
-offers.add_item(Offer("X",90))
-offers.add_item(Offer("Y",10))
-offers.add_item(Offer("Z",50))
+offers.add_item(Offer("X",17))
+offers.add_item(Offer("Y",20))
+offers.add_item(Offer("Z",21))
 
 
 def checkout(skus):
@@ -352,6 +352,7 @@ print(checkout("STXYZ"), 120)
 # id = CHK_R4_140, req = checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH"), resp = 1880
 # id = CHK_R4_141, req = checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH"), resp = 1640
 # id = CHK_R4_001, req = checkout("PPPPQRUVPQRUVPQRUVSU"), resp = 740
+
 
 
 
