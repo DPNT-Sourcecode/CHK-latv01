@@ -90,7 +90,7 @@ specials = Specials()
 specials.add_special("A", [(5, 200), (3, 130)])
 specials.add_special("B", [(2, 45)])
 specials.add_special("H", [(10, 80), (5, 45)])
-specials.add_special("K", [(2, 150)])
+specials.add_special("K", [(2, 120)])
 specials.add_special("P", [(5, 200)])
 specials.add_special("Q", [(3, 80)])
 specials.add_special("V", [(3, 130), (2, 90)])
@@ -212,6 +212,10 @@ def checkout(skus):
 # print(checkout("K"),70)
 # print(checkout("ABCDEFGHIJKLMNOPQRSTUVW"), 795)
 # print(checkout("K"), 70)
+
+print(checkout("KK"), 120)
+print(checkout("KKK"), 190)
+print(checkout("KKKK"), 240)
 
 
 
@@ -518,6 +522,7 @@ def checkout(skus):
 # - {"method":"checkout","params":["K"],"id":"CHK_R5_013"}, expected: 70, got: 80
 # - {"method":"checkout","params":["ABCDEFGHIJKLMNOPQRSTUVW"],"id":"CHK_R5_033"}, expected: 795, got: 805
 # - {"method":"checkout","params":["K"],"id":"CHK_R5_095"}, expected: 70, got: 80
+
 
 
 
