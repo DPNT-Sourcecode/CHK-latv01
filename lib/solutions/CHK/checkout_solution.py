@@ -37,6 +37,21 @@ class FreeSpecial(Specials):
         else:
             return []
 
+class GroupSpecial(Specials):
+    def __init__(self):
+        super().__init__()
+
+    def get_special(self, key, value):
+        if key in self.items:
+            ret = []
+            for v in self.items[key]:
+                covered = int(value) // v[0]
+                if covered > 0:
+                    ret.append((v[1], covered))
+            return ret
+        else:
+            return []
+
 class Offer:
     def __init__(self, item, price):
         self.item = item
@@ -47,19 +62,6 @@ class Offer:
         total += items_left * self.price
 
         return total
-
-        # if self.special,"":
-        #     return self.price * amount
-        # else:
-        #     special = self.special.split(" for ")
-        #     stripped_amount = re.search(r'[0-9]+',special[0]).group()
-        #
-        #     if int(stripped_amount) > amount:
-        #         return self.price * amount
-        #
-        #     not_covered = amount % int(stripped_amount)
-        #     covered = amount // int(stripped_amount)
-        #     return self.price * not_covered + int(special[1]) * covered
 
 class Offers:
     def __init__(self):
@@ -96,6 +98,9 @@ free_specials.add_special("F", [(3, "F")])
 free_specials.add_special("N", [(3, "M")])
 free_specials.add_special("R", [(3, "Q")])
 free_specials.add_special("U", [(4, "U")])
+
+group_special = GroupSpecial()
+group_special.add_special("STXYZ", [(3, 45)])
 
 offers = Offers()
 offers.add_item(Offer("A", 50))
@@ -142,7 +147,11 @@ def checkout(skus):
         fs = free_specials.get_special(k, counted[k])
         free_items += fs
 
-    for fi, fc in free_items:
+    for k in counted:
+        fs = free_specials.get_special(k, counted[k])
+        free_items += fs
+
+    for fi, fc in group_special:
         if fi in counted and counted[fi] > 0:
             counted[fi] -= fc
 
@@ -327,6 +336,7 @@ print(checkout("STXYZ"), 120)
 # id = CHK_R4_140, req = checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH"), resp = 1880
 # id = CHK_R4_141, req = checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH"), resp = 1640
 # id = CHK_R4_001, req = checkout("PPPPQRUVPQRUVPQRUVSU"), resp = 740
+
 
 
 
