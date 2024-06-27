@@ -207,7 +207,11 @@ def checkout(skus):
 # print(checkout("BEBEEEFFFF"), 190)
 # print(checkout("BEBEEEFFFFF"), 200)
 # print(checkout("UUU"), 120)
-print(checkout("STXYZ"), 120)
+# print(checkout("STXYZ"), 120)
+
+# print(checkout("K"),70)
+# print(checkout("ABCDEFGHIJKLMNOPQRSTUVW"), 795)
+# print(checkout("K"), 70)
 
 
 
@@ -351,6 +355,169 @@ print(checkout("STXYZ"), 120)
 # id = CHK_R4_140, req = checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH"), resp = 1880
 # id = CHK_R4_141, req = checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH"), resp = 1640
 # id = CHK_R4_001, req = checkout("PPPPQRUVPQRUVPQRUVSU"), resp = 740
+
+
+# Selected action is: deploy
+# Starting client
+# Waiting for requests
+#     id = CHK_R5_002, req = checkout(""), resp = 0
+# id = CHK_R5_003, req = checkout("A"), resp = 50
+# id = CHK_R5_004, req = checkout("B"), resp = 30
+# id = CHK_R5_005, req = checkout("C"), resp = 20
+# id = CHK_R5_006, req = checkout("D"), resp = 15
+# id = CHK_R5_007, req = checkout("E"), resp = 40
+# id = CHK_R5_008, req = checkout("F"), resp = 10
+# id = CHK_R5_009, req = checkout("G"), resp = 20
+# id = CHK_R5_010, req = checkout("H"), resp = 10
+# id = CHK_R5_011, req = checkout("I"), resp = 35
+# id = CHK_R5_012, req = checkout("J"), resp = 60
+# id = CHK_R5_013, req = checkout("K"), resp = 80
+# id = CHK_R5_014, req = checkout("L"), resp = 90
+# id = CHK_R5_015, req = checkout("M"), resp = 15
+# id = CHK_R5_016, req = checkout("N"), resp = 40
+# id = CHK_R5_017, req = checkout("O"), resp = 10
+# id = CHK_R5_018, req = checkout("P"), resp = 50
+# id = CHK_R5_019, req = checkout("Q"), resp = 30
+# id = CHK_R5_020, req = checkout("R"), resp = 50
+# id = CHK_R5_021, req = checkout("S"), resp = 20
+# id = CHK_R5_022, req = checkout("T"), resp = 20
+# id = CHK_R5_023, req = checkout("U"), resp = 40
+# id = CHK_R5_024, req = checkout("V"), resp = 50
+# id = CHK_R5_025, req = checkout("W"), resp = 20
+# id = CHK_R5_026, req = checkout("X"), resp = 17
+# id = CHK_R5_027, req = checkout("Y"), resp = 20
+# id = CHK_R5_028, req = checkout("Z"), resp = 21
+# id = CHK_R5_029, req = checkout("a"), resp = -1
+# id = CHK_R5_030, req = checkout("-"), resp = -1
+# id = CHK_R5_031, req = checkout("ABCa"), resp = -1
+# id = CHK_R5_032, req = checkout("AxA"), resp = -1
+# id = CHK_R5_033, req = checkout("ABCDEFGHIJKLMNOPQRSTUVW"), resp = 805
+# id = CHK_R5_034, req = checkout("A"), resp = 50
+# id = CHK_R5_035, req = checkout("AA"), resp = 100
+# id = CHK_R5_036, req = checkout("AAA"), resp = 130
+# id = CHK_R5_037, req = checkout("AAAA"), resp = 180
+# id = CHK_R5_038, req = checkout("AAAAA"), resp = 200
+# id = CHK_R5_039, req = checkout("AAAAAA"), resp = 250
+# id = CHK_R5_040, req = checkout("AAAAAAA"), resp = 300
+# id = CHK_R5_041, req = checkout("AAAAAAAA"), resp = 330
+# id = CHK_R5_042, req = checkout("AAAAAAAAA"), resp = 380
+# id = CHK_R5_043, req = checkout("AAAAAAAAAA"), resp = 400
+# id = CHK_R5_044, req = checkout("P"), resp = 50
+# id = CHK_R5_045, req = checkout("PP"), resp = 100
+# id = CHK_R5_046, req = checkout("PPP"), resp = 150
+# id = CHK_R5_047, req = checkout("PPPP"), resp = 200
+# id = CHK_R5_048, req = checkout("PPPPP"), resp = 200
+# id = CHK_R5_049, req = checkout("PPPPPP"), resp = 250
+# id = CHK_R5_050, req = checkout("PPPPPPP"), resp = 300
+# id = CHK_R5_051, req = checkout("PPPPPPPP"), resp = 350
+# id = CHK_R5_052, req = checkout("PPPPPPPPP"), resp = 400
+# id = CHK_R5_053, req = checkout("PPPPPPPPPP"), resp = 400
+# id = CHK_R5_054, req = checkout("UUU"), resp = 120
+# id = CHK_R5_055, req = checkout("UUUU"), resp = 120
+# id = CHK_R5_056, req = checkout("UUUUU"), resp = 160
+# id = CHK_R5_057, req = checkout("UUUUUUUU"), resp = 240
+# id = CHK_R5_058, req = checkout("UUUUUUUU"), resp = 240
+# id = CHK_R5_059, req = checkout("EE"), resp = 80
+# id = CHK_R5_060, req = checkout("EEB"), resp = 80
+# id = CHK_R5_061, req = checkout("EEEB"), resp = 120
+# id = CHK_R5_062, req = checkout("EEEEBB"), resp = 160
+# id = CHK_R5_063, req = checkout("BEBEEE"), resp = 160
+# id = CHK_R5_064, req = checkout("RRR"), resp = 150
+# id = CHK_R5_065, req = checkout("RRRQ"), resp = 150
+# id = CHK_R5_066, req = checkout("RRRRQ"), resp = 200
+# id = CHK_R5_067, req = checkout("RRRRRRQQ"), resp = 300
+# id = CHK_R5_068, req = checkout("RRRQRQRR"), resp = 300
+# id = CHK_R5_069, req = checkout("A"), resp = 50
+# id = CHK_R5_070, req = checkout("AA"), resp = 100
+# id = CHK_R5_071, req = checkout("AAA"), resp = 130
+# id = CHK_R5_072, req = checkout("AAAA"), resp = 180
+# id = CHK_R5_073, req = checkout("AAAAA"), resp = 200
+# id = CHK_R5_074, req = checkout("AAAAAA"), resp = 250
+# id = CHK_R5_075, req = checkout("H"), resp = 10
+# id = CHK_R5_076, req = checkout("HH"), resp = 20
+# id = CHK_R5_077, req = checkout("HHH"), resp = 30
+# id = CHK_R5_078, req = checkout("HHHH"), resp = 40
+# id = CHK_R5_079, req = checkout("HHHHH"), resp = 45
+# id = CHK_R5_080, req = checkout("HHHHHH"), resp = 55
+# id = CHK_R5_081, req = checkout("HHHHHHH"), resp = 65
+# id = CHK_R5_082, req = checkout("HHHHHHHH"), resp = 75
+# id = CHK_R5_083, req = checkout("HHHHHHHHH"), resp = 85
+# id = CHK_R5_084, req = checkout("HHHHHHHHHH"), resp = 80
+# id = CHK_R5_085, req = checkout("HHHHHHHHHHH"), resp = 90
+# id = CHK_R5_086, req = checkout("HHHHHHHHHHHH"), resp = 100
+# id = CHK_R5_087, req = checkout("HHHHHHHHHHHHH"), resp = 110
+# id = CHK_R5_088, req = checkout("HHHHHHHHHHHHHH"), resp = 120
+# id = CHK_R5_089, req = checkout("HHHHHHHHHHHHHHH"), resp = 125
+# id = CHK_R5_090, req = checkout("HHHHHHHHHHHHHHHH"), resp = 135
+# id = CHK_R5_091, req = checkout("HHHHHHHHHHHHHHHHH"), resp = 145
+# id = CHK_R5_092, req = checkout("HHHHHHHHHHHHHHHHHH"), resp = 155
+# id = CHK_R5_093, req = checkout("HHHHHHHHHHHHHHHHHHH"), resp = 165
+# id = CHK_R5_094, req = checkout("HHHHHHHHHHHHHHHHHHHH"), resp = 160
+# id = CHK_R5_095, req = checkout("K"), resp = 80
+# id = CHK_R5_096, req = checkout("KK"), resp = 150
+# id = CHK_R5_097, req = checkout("KKK"), resp = 230
+# id = CHK_R5_098, req = checkout("KKKK"), resp = 300
+# id = CHK_R5_099, req = checkout("V"), resp = 50
+# id = CHK_R5_100, req = checkout("VV"), resp = 90
+# id = CHK_R5_101, req = checkout("VVV"), resp = 130
+# id = CHK_R5_102, req = checkout("VVVV"), resp = 180
+# id = CHK_R5_103, req = checkout("VVVVV"), resp = 220
+# id = CHK_R5_104, req = checkout("VVVVVV"), resp = 260
+# id = CHK_R5_105, req = checkout("B"), resp = 30
+# id = CHK_R5_106, req = checkout("BB"), resp = 45
+# id = CHK_R5_107, req = checkout("BBB"), resp = 75
+# id = CHK_R5_108, req = checkout("BBBB"), resp = 90
+# id = CHK_R5_109, req = checkout("NNN"), resp = 120
+# id = CHK_R5_110, req = checkout("NNNM"), resp = 120
+# id = CHK_R5_111, req = checkout("NNNNM"), resp = 160
+# id = CHK_R5_112, req = checkout("NNNNNNMM"), resp = 240
+# id = CHK_R5_113, req = checkout("NNNMNMNN"), resp = 240
+# id = CHK_R5_114, req = checkout("FF"), resp = 20
+# id = CHK_R5_115, req = checkout("FFF"), resp = 20
+# id = CHK_R5_116, req = checkout("FFFF"), resp = 30
+# id = CHK_R5_117, req = checkout("FFFFFF"), resp = 40
+# id = CHK_R5_118, req = checkout("FFFFFF"), resp = 40
+# id = CHK_R5_119, req = checkout("Q"), resp = 30
+# id = CHK_R5_120, req = checkout("QQ"), resp = 60
+# id = CHK_R5_121, req = checkout("QQQ"), resp = 80
+# id = CHK_R5_122, req = checkout("QQQQ"), resp = 110
+# id = CHK_R5_123, req = checkout("QQQQQ"), resp = 140
+# id = CHK_R5_124, req = checkout("QQQQQQ"), resp = 160
+# id = CHK_R5_125, req = checkout("V"), resp = 50
+# id = CHK_R5_126, req = checkout("VV"), resp = 90
+# id = CHK_R5_127, req = checkout("VVV"), resp = 130
+# id = CHK_R5_128, req = checkout("VVVV"), resp = 180
+# id = CHK_R5_129, req = checkout("H"), resp = 10
+# id = CHK_R5_130, req = checkout("HH"), resp = 20
+# id = CHK_R5_131, req = checkout("HHH"), resp = 30
+# id = CHK_R5_132, req = checkout("HHHH"), resp = 40
+# id = CHK_R5_133, req = checkout("HHHHH"), resp = 45
+# id = CHK_R5_134, req = checkout("HHHHHH"), resp = 55
+# id = CHK_R5_135, req = checkout("HHHHHHH"), resp = 65
+# id = CHK_R5_136, req = checkout("HHHHHHHH"), resp = 75
+# id = CHK_R5_137, req = checkout("HHHHHHHHH"), resp = 85
+# id = CHK_R5_138, req = checkout("HHHHHHHHHH"), resp = 80
+# id = CHK_R5_139, req = checkout("STX"), resp = 45
+# id = CHK_R5_140, req = checkout("STXSTX"), resp = 102
+# id = CHK_R5_141, req = checkout("SSS"), resp = 60
+# id = CHK_R5_142, req = checkout("SSSZ"), resp = 81
+# id = CHK_R5_143, req = checkout("ZZZ"), resp = 63
+# id = CHK_R5_144, req = checkout("ZZZS"), resp = 83
+# id = CHK_R5_145, req = checkout("STXS"), resp = 65
+# id = CHK_R5_146, req = checkout("STXZ"), resp = 66
+# id = CHK_R5_147, req = checkout("ABCDEFGHIJKLMNOPQRSTUVWXYZABCDEFGHIJKLMNOPQRSTUVWXYZ"), resp = 1664
+# id = CHK_R5_148, req = checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH"), resp = 1664
+# id = CHK_R5_149, req = checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHKKVVVBBNNNMFFFQQQVVHHHHHSTX"), resp = 1685
+# id = CHK_R5_001, req = checkout("CXYZYZC"), resp = 126
+# Stopping client
+# Notify round "CHK_R5", event "deploy"
+# --------------------------------------------
+#
+# Result is: FAILED
+# Some requests have failed (17/149). Here are some of them:
+# - {"method":"checkout","params":["K"],"id":"CHK_R5_013"}, expected: 70, got: 80
+# - {"method":"checkout","params":["ABCDEFGHIJKLMNOPQRSTUVW"],"id":"CHK_R5_033"}, expected: 795, got: 805
+# - {"method":"checkout","params":["K"],"id":"CHK_R5_095"}, expected: 70, got: 80
 
 
 
