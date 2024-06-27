@@ -147,11 +147,16 @@ def checkout(skus):
         fs = free_specials.get_special(k, counted[k])
         free_items += fs
 
+    group_items = []
     for k in counted:
-        fs = free_specials.get_special(k, counted[k])
-        free_items += fs
+        gs = group_special.get_special(k, counted[k])
+        group_items += gs
 
-    for fi, fc in group_special:
+    for fi, fc in free_items:
+        if fi in counted and counted[fi] > 0:
+            counted[fi] -= fc
+
+    for fi, fc in group_items:
         if fi in counted and counted[fi] > 0:
             counted[fi] -= fc
 
@@ -336,6 +341,7 @@ print(checkout("STXYZ"), 120)
 # id = CHK_R4_140, req = checkout("LGCKAQXFOSKZGIWHNRNDITVBUUEOZXPYAVFDEPTBMQLYJRSMJCWH"), resp = 1880
 # id = CHK_R4_141, req = checkout("AAAAAPPPPPUUUUEEBRRRQAAAHHHHHHHHHHVVVBBNNNMFFFKKQQQVVHHHHH"), resp = 1640
 # id = CHK_R4_001, req = checkout("PPPPQRUVPQRUVPQRUVSU"), resp = 740
+
 
 
 
