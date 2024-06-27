@@ -227,7 +227,7 @@ def checkout(skus):
 # print(checkout("SSSZ"), 65)
 # print(checkout("ZZZ"), 45)
 # print(checkout("ZZZS"), 65)
-print(checkout("STXZ"), 65)
+# print(checkout("STXZ"), 65)
 
 
 
@@ -535,5 +535,6 @@ print(checkout("STXZ"), 65)
 # - {"method":"checkout","params":["K"],"id":"CHK_R5_013"}, expected: 70, got: 80
 # - {"method":"checkout","params":["ABCDEFGHIJKLMNOPQRSTUVW"],"id":"CHK_R5_033"}, expected: 795, got: 805
 # - {"method":"checkout","params":["K"],"id":"CHK_R5_095"}, expected: 70, got: 80
+
 
 
