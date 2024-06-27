@@ -9,6 +9,7 @@ class Specials:
 
     def get_special(self, key, value):
         temp_value = value
+        specials_price = 0
         if key in self.items:
             ret = []
             for v in self.items[key]:
@@ -16,9 +17,10 @@ class Specials:
                 if covered > 0:
                     ret.append(v[1])
                     temp_value -= covered * v[0]
-            return ret
+                    specials_price += covered * v[1]
+            return temp_value, specials_price
         else:
-            return []
+            return 0, value
 
 class FreeSpecial(Specials):
     def __init__(self):
@@ -41,7 +43,7 @@ class Offer:
         self.price = price
 
     def get_total(self, amount, specials):
-        special = specials.get_special(self.item, amount)
+        items_left, total = specials.get_special(self.item, amount)
         if self.special == "":
             return self.price * amount
         else:
